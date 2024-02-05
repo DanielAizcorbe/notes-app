@@ -2,39 +2,16 @@ import { Layout } from 'antd'
 import { Footer } from 'antd/es/layout/layout';
 import React, { useState } from 'react'
 import HeaderHome from './header/HeaderHome';
-import { Filters } from './content/Filters';
+import { ContentHome } from './content/ContentHome';
 
 export const Home = () => {
-
-    const tags = [
-        {
-            label: "programming",
-            value: "red"
-        },
-        {
-            label: "computer",
-            value: "blue"
-        },
-        {
-            label: "language",
-            value: "green"
-        }
-    ];
-
-    const [selectedTags, setSelectedTags] = useState([]);
-
+    
     return (
         <Layout
             style={{ width: "100%", height: "100%" }}
         >
             <HeaderHome />
-            <Layout>
-                <Filters 
-                    tags={tags}
-                    handleSelectedTags={setSelectedTags}
-                    selectedTags={selectedTags}
-                />
-            </Layout>
+            <ContentHome />
             <Footer>
                 Este es mi footer
             </Footer>

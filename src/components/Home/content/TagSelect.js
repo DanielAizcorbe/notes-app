@@ -1,32 +1,19 @@
 import { Select, Tag } from 'antd'
-import React, { useState } from 'react'
+import React from 'react'
 
-const TagSelect = () => {
+const TagSelect = ({ tags, handleSelectedTags, selectedTags }) => {
 
-    const tags2 = [
-        {
-            label: "computer",
-            color: "red"
-        },
-        {
-            label: "language",
-            color: "green"
-        }
-    ];
-
-    const [selected, setSelected] = useState([]);
-    
     const tagRender = (props) => {
         const { label, closable, onClose } = props;
-        const color = tags2.find(tag => tag.label === label)?.color;
+        const color = tags.find(tag => tag.label === label)?.color;
         const onPreventMouseDown = (event) => {
             event.preventDefault();
             event.stopPropagation();
         };
 
         const unselectTag = () => {
-            const newSelected = selected.filter(t => t.label !== label);
-            setSelected(newSelected);
+            const newSelected = selectedTags.filter(t => t.label !== label);
+            handleSelectedTags(newSelected);
         }
 
         return (
@@ -46,18 +33,24 @@ const TagSelect = () => {
     };
 
     const handleChange = (options) => {
-        const selectedOptions = options.map(label => tags2.find(t => t.label === label));
-        setSelected(selectedOptions);
+        const selectedOptions = options.map(label => tags.find(t => t.label === label));
+        handleSelectedTags(selectedOptions);
     }
+
+    const stylesContainer = {
+        width: "20%",
+    };
 
     return (
         <Select
+            allowClear
             mode='tags'
             tagRender={tagRender}
-            options={tags2.map(t => ({ label: t.label, value: t.label }))}
+            options={tags.map(t => ({ label: t.label, value: t.label }))}
             placeholder="Selecciona tus tags"
             onChange={handleChange}
-            value={selected.map(tag => tag.label)}
+            value={selectedTags.map(tag => tag.label)}
+            style={stylesContainer}
         />
     );
 }

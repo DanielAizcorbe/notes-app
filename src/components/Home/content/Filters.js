@@ -1,30 +1,31 @@
 import { Flex } from 'antd'
-import Sider from 'antd/es/layout/Sider'
 import React from 'react'
 import TagSelect from './TagSelect'
-import Title from 'antd/es/typography/Title'
+import { SearchBar } from './SearchBar'
 
-export const Filters = ({tags, handleSelectedTags, selectedTags}) => {
+export const Filters = ({ tags, handleSelectedTags, selectedTags }) => {
 
-
+    const styleContainer = {
+        padding: "1rem 1.5rem",
+        borderRadius: "10px",
+        border: "1px solid black",
+    };
 
     return (
-        <Sider
-            width={"30%"}
+        <Flex
+            horizontal
+            style={styleContainer}
+            justify="flex-start"
+            align='center'
+            gap={"1rem"}
         >
-            <Flex
-                vertical
-                style={{padding: "1rem 1.5rem"}}
-            >   
-                <Title level={3}>
-                    Filtros
-                </Title>
-                <TagSelect 
-                    tags={tags}
-                    handleSelectedTags={handleSelectedTags}
-                    selectedTags={selectedTags}
-                />
-            </Flex>
-        </Sider>
+            <TagSelect
+                tags={tags}
+                handleSelectedTags={handleSelectedTags}
+                selectedTags={selectedTags}
+            />
+            <SearchBar
+            />
+        </Flex>
     )
 }
