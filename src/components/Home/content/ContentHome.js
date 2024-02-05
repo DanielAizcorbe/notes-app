@@ -2,6 +2,7 @@ import { Content } from 'antd/es/layout/layout'
 import React, { useState } from 'react'
 import { Filters } from './Filters'
 import Title from 'antd/es/typography/Title';
+import ListaNotas from './ListaNotas';
 
 export const ContentHome = () => {
 
@@ -49,6 +50,9 @@ export const ContentHome = () => {
                 tags={tags}
                 handleSelectedTags={setSelectedTags}
                 selectedTags={selectedTags}
+            />
+            <ListaNotas 
+                
             />
         </Content>
     )

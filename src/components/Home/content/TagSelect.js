@@ -24,6 +24,7 @@ const TagSelect = ({ tags, handleSelectedTags, selectedTags }) => {
                 onClose={unselectTag}
                 style={{
                     marginRight: 3,
+                    marginBottom: 3,
                 }}
                 key={label}
             >
@@ -38,7 +39,7 @@ const TagSelect = ({ tags, handleSelectedTags, selectedTags }) => {
     }
 
     const stylesContainer = {
-        width: "20%",
+        width: "40%",
     };
 
     return (

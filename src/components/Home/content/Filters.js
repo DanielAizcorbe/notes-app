@@ -6,18 +6,16 @@ import { SearchBar } from './SearchBar'
 export const Filters = ({ tags, handleSelectedTags, selectedTags }) => {
 
     const styleContainer = {
-        padding: "1rem 1.5rem",
-        borderRadius: "10px",
-        border: "1px solid black",
+        padding: "1rem 0",
+        width: "80%",
     };
 
     return (
         <Flex
             horizontal
             style={styleContainer}
-            justify="flex-start"
+            justify="space-between"
             align='center'
-            gap={"1rem"}
         >
             <TagSelect
                 tags={tags}
