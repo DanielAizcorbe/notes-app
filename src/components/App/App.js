@@ -6,8 +6,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/notes" element={<Home />} />
+        <Route exact path="/favourites" element={<Home />} />
+        <Route exact path="/me" element={<Home />} />
+        <Route exact path="/notes/:id/edit" element={<Home />} />
+        <Route exact path="/notes/new" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
