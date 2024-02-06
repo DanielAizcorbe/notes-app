@@ -1,6 +1,6 @@
 import { Flex } from 'antd'
 import React from 'react'
-import TagSelect from './TagSelect'
+import TagSelect from '../tags/TagSelect'
 import { SearchBar } from './SearchBar'
 
 export const Filters = ({ tags, handleSelectedTags, selectedTags }) => {
@@ -12,7 +12,6 @@ export const Filters = ({ tags, handleSelectedTags, selectedTags }) => {
 
     return (
         <Flex
-            horizontal
             style={styleContainer}
             justify="space-between"
             align='center'

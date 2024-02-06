@@ -1,8 +1,8 @@
 import { Content } from 'antd/es/layout/layout'
 import React, { useState } from 'react'
-import { Filters } from './Filters'
+import { Filters } from './filtros/Filters'
 import Title from 'antd/es/typography/Title';
-import ListaNotas from './ListaNotas';
+import ListaNotas from "./notas/ListaNotas";
 
 export const ContentHome = () => {
 
@@ -51,8 +51,10 @@ export const ContentHome = () => {
                 handleSelectedTags={setSelectedTags}
                 selectedTags={selectedTags}
             />
-            <ListaNotas 
-                
+            <ListaNotas
+                tags={tags}
+                handleSelectedTags={setSelectedTags}
+                selectedTags={selectedTags}
             />
         </Content>
     )
