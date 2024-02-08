@@ -2,8 +2,11 @@ import { Flex } from 'antd'
 import React from 'react'
 import TagSelect from '../tags/TagSelect'
 import { SearchBar } from './SearchBar'
+import { useSelector } from 'react-redux'
 
-export const Filters = ({ tags, handleSelectedTags, selectedTags }) => {
+export const Filters = ({ handleSelectedTags, selectedTags }) => {
+
+    const tags = useSelector(state => state.tags);
 
     const styleContainer = {
         padding: "1rem 0",

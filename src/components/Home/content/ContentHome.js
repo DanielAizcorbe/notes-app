@@ -4,37 +4,13 @@ import { Filters } from './filtros/Filters'
 import Title from 'antd/es/typography/Title';
 import ListaNotas from "./notas/ListaNotas";
 import { Flex } from 'antd';
+import { useSelector } from 'react-redux';
+import ListaVacia from './notas/ListaVacia';
 
 export const ContentHome = () => {
 
-    const tags = [
-        {
-            label: "computer",
-            color: "red"
-        },
-        {
-            label: "language",
-            color: "green"
-        },
-        {
-            label: "teatro",
-            color: "blue"
-        },
-        {
-            label: "español",
-            color: "yellow"
-        },
-        {
-            label: "sistemas",
-            color: "pink"
-        },
-        {
-            label: "react",
-            color: "lightblue"
-        }
-    ];
-
     const [selectedTags, setSelectedTags] = useState([]);
+    const notas = useSelector(state => state.notas);
 
     const styleContent = {
         padding: "2rem 4rem",
@@ -54,15 +30,16 @@ export const ContentHome = () => {
                     Notas
                 </Title>
                 <Filters
-                    tags={tags}
                     handleSelectedTags={setSelectedTags}
                     selectedTags={selectedTags}
                 />
-                <ListaNotas
-                    tags={tags}
-                    handleSelectedTags={setSelectedTags}
-                    selectedTags={selectedTags}
-                />
+                {
+                    notas.length !== 0 ?
+                        <ListaNotas
+                            notas={notas}
+                            selectedTags={selectedTags}
+                        /> : <ListaVacia />
+                }
             </Content>
         </Flex>
     )

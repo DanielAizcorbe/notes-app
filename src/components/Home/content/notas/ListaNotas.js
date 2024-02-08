@@ -3,14 +3,7 @@ import React from 'react'
 import ItemNota from './ItemNota';
 import { useSelector } from 'react-redux';
 
-
-const ListaNotas = ({tags, selectedTags, handleSelectedTags}) => {
-
-    const notas = useSelector(state => state.notas);
-
-    const styles = {
-        
-    };
+const ListaNotas = ({ selectedTags, notas }) => {
 
     /**
     * * LAS NOTAS TIENEN LA FORMA
@@ -21,15 +14,11 @@ const ListaNotas = ({tags, selectedTags, handleSelectedTags}) => {
     * *    favourite: boolean
     * * }
     */
+
     const renderItem = (item) => {
         return (
-            <ItemNota 
-                id={item.id} 
-                title={item.title}
-                tags={tags}
-                handleSelectedTags={handleSelectedTags}
-                selectedTags={selectedTags}
-                onClick={() => alert("abriendo nota "+ item.id)}
+            <ItemNota
+                nota={item}
             />
         )
     }
@@ -40,7 +29,7 @@ const ListaNotas = ({tags, selectedTags, handleSelectedTags}) => {
             bordered
             dataSource={notas}
             renderItem={renderItem}
-            style={styles}
+            pagination={true}
         />
     )
 }

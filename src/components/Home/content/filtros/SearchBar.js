@@ -14,7 +14,7 @@ export const SearchBar = ({}) => {
 
     return (
         <Search
-            placeholder="input search text"
+            placeholder="Buscar por título"
             onSearch={() => {}}
             enterButton
             style={styles}
