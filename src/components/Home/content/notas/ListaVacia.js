@@ -7,7 +7,6 @@ const ListaVacia = () => {
         <Flex
             align='center'
             justify='center'
-            style={{ padding: "1rem", border: "1px solid lightgray", borderRadius: "10px" }}
         >
             <Empty
                 description={
@@ -16,7 +15,6 @@ const ListaVacia = () => {
                     </Typography>
                 }
             >
-
             </Empty>
         </Flex>
     )

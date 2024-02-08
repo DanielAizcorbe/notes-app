@@ -1,9 +1,9 @@
 import { List } from 'antd'
 import React from 'react'
 import ItemNota from './ItemNota';
-import { useSelector } from 'react-redux';
+import ListaVacia from "./ListaVacia"
 
-const ListaNotas = ({ selectedTags, notas }) => {
+const ListaNotas = ({ notas }) => {
 
     /**
     * * LAS NOTAS TIENEN LA FORMA
@@ -30,6 +30,7 @@ const ListaNotas = ({ selectedTags, notas }) => {
             dataSource={notas}
             renderItem={renderItem}
             pagination={true}
+            locale={{emptyText: <ListaVacia />}}
         />
     )
 }

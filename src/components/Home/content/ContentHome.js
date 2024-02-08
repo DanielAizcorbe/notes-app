@@ -5,7 +5,6 @@ import Title from 'antd/es/typography/Title';
 import ListaNotas from "./notas/ListaNotas";
 import { Flex } from 'antd';
 import { useSelector } from 'react-redux';
-import ListaVacia from './notas/ListaVacia';
 
 export const ContentHome = () => {
 
@@ -33,13 +32,9 @@ export const ContentHome = () => {
                     handleSelectedTags={setSelectedTags}
                     selectedTags={selectedTags}
                 />
-                {
-                    notas.length !== 0 ?
-                        <ListaNotas
-                            notas={notas}
-                            selectedTags={selectedTags}
-                        /> : <ListaVacia />
-                }
+                <ListaNotas
+                    notas={notas}
+                />
             </Content>
         </Flex>
     )
