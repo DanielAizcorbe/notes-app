@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Filters } from './filtros/Filters'
 import Title from 'antd/es/typography/Title';
 import ListaNotas from "./notas/ListaNotas";
+import { Flex } from 'antd';
 
 export const ContentHome = () => {
 
@@ -37,25 +38,32 @@ export const ContentHome = () => {
 
     const styleContent = {
         padding: "2rem 4rem",
+        maxWidth: "1400px",
+        width: "100%",
     };
 
     return (
-        <Content
-            style={styleContent}
+        <Flex
+            justify='center'
+            align='center'
         >
-            <Title>
-                Notas
-            </Title>
-            <Filters
-                tags={tags}
-                handleSelectedTags={setSelectedTags}
-                selectedTags={selectedTags}
-            />
-            <ListaNotas
-                tags={tags}
-                handleSelectedTags={setSelectedTags}
-                selectedTags={selectedTags}
-            />
-        </Content>
+            <Content
+                style={styleContent}
+            >
+                <Title>
+                    Notas
+                </Title>
+                <Filters
+                    tags={tags}
+                    handleSelectedTags={setSelectedTags}
+                    selectedTags={selectedTags}
+                />
+                <ListaNotas
+                    tags={tags}
+                    handleSelectedTags={setSelectedTags}
+                    selectedTags={selectedTags}
+                />
+            </Content>
+        </Flex>
     )
 }

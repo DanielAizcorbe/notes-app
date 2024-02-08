@@ -1,59 +1,20 @@
 import { List } from 'antd'
 import React from 'react'
 import ItemNota from './ItemNota';
+import { useSelector } from 'react-redux';
 
 
 const ListaNotas = ({tags, selectedTags, handleSelectedTags}) => {
 
-    const items = [
-        {
-            title: "Titulo 1",
-            id: 1,
-            tags: [],
-            favourite: false
-        },
-        {
-            title: "Titulo 2",
-            id: 2,
-            tags: [],
-            favourite: false
-        },
-        {
-            title: "Titulo 3",
-            id: 3,
-            tags: [],
-            favourite: false
-        },
-        {
-            title: "Titulo 4",
-            id: 4,
-            tags: [],
-            favourite: false
-        },
-        {
-            title: "Titulo 5",
-            id: 5,
-            tags: [],
-            favourite: false
-        },
-        {
-            title: "Titulo 6",
-            id: 6,
-            tags: [],
-            favourite: false
-        },
-        {
-            title: "Titulo 7",
-            id: 7,
-            tags: [],
-            favourite: false
-        },
-    ];
+    const notas = useSelector(state => state.notas);
 
+    const styles = {
+        
+    };
 
     /**
-    * * LOS ITEMS TIENEN LA FORMA
-    * * item = {
+    * * LAS NOTAS TIENEN LA FORMA
+    * * nota = {
     * *    title: string,
     * *    id: number,
     * *    tags: array,
@@ -68,6 +29,7 @@ const ListaNotas = ({tags, selectedTags, handleSelectedTags}) => {
                 tags={tags}
                 handleSelectedTags={handleSelectedTags}
                 selectedTags={selectedTags}
+                onClick={() => alert("abriendo nota "+ item.id)}
             />
         )
     }
@@ -76,8 +38,9 @@ const ListaNotas = ({tags, selectedTags, handleSelectedTags}) => {
         <List
             size="large"
             bordered
-            dataSource={items}
+            dataSource={notas}
             renderItem={renderItem}
+            style={styles}
         />
     )
 }

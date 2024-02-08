@@ -5,15 +5,17 @@ import { BotonTag } from './BotonTag';
 import BotonFav from './BotonFav';
 import { BotonBorrar } from './BotonBorrar';
 
-const ItemNota = ({ id, className, title, handleSelectedTags, selectedTags, tags }) => {
+const ItemNota = ({ id, className, title, handleSelectedTags, selectedTags, tags, onClick }) => {
     return (
         <List.Item className={className}>
             <Flex
                 vertical
+                onClick={onClick}
+                style={{width: "100%"}}
             >
-                <Title 
+                <Title
                     level={3}
-                    style={{margin: 0, padding: "0.5rem 0"}}
+                    style={{ margin: 0, padding: "0.5rem 0" }}
                 >
                     {title}
                 </Title>
