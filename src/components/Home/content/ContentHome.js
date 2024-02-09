@@ -9,8 +9,12 @@ import { useSelector } from 'react-redux';
 export const ContentHome = () => {
 
     const [selectedTags, setSelectedTags] = useState([]);
+    const [titleSearch, setTitleSearch] = useState("");
+
     const notas = useSelector(state => state.notas);
-    
+    const filteredTagNotes = selectedTags.length > 0 ? notas.filter(n => selectedTags.every(t => n.tags.includes(t.id))) : notas;
+    const filteredTextNotes = titleSearch !== "" ? filteredTagNotes.filter(n => n.title.includes(titleSearch)) : filteredTagNotes;
+
     const styleContent = {
         padding: "2rem 4rem",
         maxWidth: "1400px",
@@ -31,9 +35,11 @@ export const ContentHome = () => {
                 <Filters
                     handleSelectedTags={setSelectedTags}
                     selectedTags={selectedTags}
+                    searchText={titleSearch}
+                    setSearchText={setTitleSearch}
                 />
                 <ListaNotas
-                    notas={notas}
+                    notas={filteredTextNotes}
                 />
             </Content>
         </Flex>

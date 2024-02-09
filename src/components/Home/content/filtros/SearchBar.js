@@ -1,7 +1,7 @@
 import Search from 'antd/es/input/Search'
 import React from 'react'
 
-export const SearchBar = ({}) => {
+export const SearchBar = ({searched, changeSearch}) => {
 
     const handleSearch = (e) => {
 

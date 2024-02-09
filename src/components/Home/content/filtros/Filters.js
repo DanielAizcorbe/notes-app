@@ -4,7 +4,7 @@ import TagSelect from '../tags/TagSelect'
 import { SearchBar } from './SearchBar'
 import { useSelector } from 'react-redux'
 
-export const Filters = ({ handleSelectedTags, selectedTags }) => {
+export const Filters = ({ handleSelectedTags, selectedTags, searchText, setSearchText }) => {
 
     const tags = useSelector(state => state.tags);
 
@@ -25,6 +25,8 @@ export const Filters = ({ handleSelectedTags, selectedTags }) => {
                 selectedTags={selectedTags}
             />
             <SearchBar
+                searched={searchText}
+                changeSearch={setSearchText}
             />
         </Flex>
     )
