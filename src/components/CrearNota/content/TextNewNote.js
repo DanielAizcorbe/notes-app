@@ -5,7 +5,9 @@ export const TextNewNote = ({ changeContent }) => {
 
     const styles = {
         width: '100%',
-        height: "60vh",
+        maxHeight: "1000px",
+        minHeight: "400px",
+        height: "100%",
         resize: "none",
     };
 
@@ -14,7 +16,6 @@ export const TextNewNote = ({ changeContent }) => {
     }
     return (
         <TextArea
-            autoSize={{maxRows: "15"}}
             style={styles}
             variant='borderless'
             onChange={onChange}

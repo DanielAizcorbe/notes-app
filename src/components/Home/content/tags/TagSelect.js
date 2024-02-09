@@ -1,11 +1,11 @@
-import { Select, Tag } from 'antd'
+import { Select } from 'antd'
 import React from 'react'
 import { tagRender } from './tagRender';
 
 const TagSelect = ({ tags, handleSelectedTags, selectedTags }) => {
 
     const displayTag = (props) => {
-        const { label, closable, onClose } = props;
+        const { label, _closable, _onClose } = props;
         return tagRender(tags, label, handleSelectedTags, selectedTags);
     };
 
