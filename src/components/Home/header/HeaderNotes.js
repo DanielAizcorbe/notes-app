@@ -2,7 +2,7 @@ import { Header } from 'antd/es/layout/layout'
 import React from 'react'
 import { NavBar } from './NavBar'
 
-const HeaderHome = () => {
+const HeaderNotes = ({selectedSection}) => {
 
     return (
         <Header
@@ -11,9 +11,9 @@ const HeaderHome = () => {
                 alignItems: 'center',
             }}
         >
-            <NavBar />
+            <NavBar selectedSection={selectedSection}/>
         </Header>
     )
 }
 
-export default HeaderHome
+export default HeaderNotes

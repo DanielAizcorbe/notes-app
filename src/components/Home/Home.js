@@ -1,6 +1,6 @@
 import { Layout } from 'antd'
 import React from 'react'
-import HeaderHome from './header/HeaderHome';
+import HeaderNotes from './header/HeaderNotes';
 import { ContentHome } from './content/ContentHome';
 
 export const Home = () => {
@@ -9,7 +9,7 @@ export const Home = () => {
         <Layout
             style={{ width: "100%", height: "100%" }}
         >
-            <HeaderHome />
+            <HeaderNotes selectedSection={'1'}/>
             <ContentHome />
         </Layout>
     )

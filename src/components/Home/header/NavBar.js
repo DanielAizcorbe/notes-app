@@ -3,7 +3,7 @@ import { Menu } from 'antd'
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export const NavBar = () => {
+export const NavBar = ({ selectedSection }) => {
 
     const items = [
         {
@@ -33,7 +33,7 @@ export const NavBar = () => {
         <Menu
             theme="dark"
             mode="horizontal"
-            defaultSelectedKeys={['1']}
+            defaultSelectedKeys={[selectedSection]}
             items={items}
             style={{
                 flex: 1,
