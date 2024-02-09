@@ -35,7 +35,6 @@ export const ContentHome = () => {
                 <Filters
                     handleSelectedTags={setSelectedTags}
                     selectedTags={selectedTags}
-                    searchText={titleSearch}
                     setSearchText={setTitleSearch}
                 />
                 <ListaNotas

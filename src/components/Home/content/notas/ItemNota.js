@@ -50,7 +50,7 @@ const ItemNota = ({ nota, className }) => {
             >
                 <Paragraph
                     ellipsis={{
-                        rows: 3,
+                        rows: 4,
                         expandable: false
                     }}
                 >
