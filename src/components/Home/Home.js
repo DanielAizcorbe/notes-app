@@ -1,5 +1,4 @@
 import { Layout } from 'antd'
-import { Footer } from 'antd/es/layout/layout';
 import React from 'react'
 import HeaderHome from './header/HeaderHome';
 import { ContentHome } from './content/ContentHome';
@@ -12,9 +11,6 @@ export const Home = () => {
         >
             <HeaderHome />
             <ContentHome />
-            <Footer>
-
-            </Footer>
         </Layout>
     )
 }
