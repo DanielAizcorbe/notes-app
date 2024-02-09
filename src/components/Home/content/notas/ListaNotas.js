@@ -11,7 +11,9 @@ const ListaNotas = ({ notas }) => {
     * *    title: string,
     * *    id: number,
     * *    tags: array,
-    * *    favourite: boolean
+    * *    favourite: boolean,
+    * *    content
+    * TODO lastEdited: date
     * * }
     */
 
@@ -25,12 +27,20 @@ const ListaNotas = ({ notas }) => {
 
     return (
         <List
+            grid={{
+                gutter: 16,
+                xs: 1,
+                sm: 1,
+                md: 2,
+                lg: 3,
+                xl: 3,
+                xxl: 3,
+            }}
             size="large"
             bordered
             dataSource={notas}
             renderItem={renderItem}
-            pagination={true}
-            locale={{emptyText: <ListaVacia />}}
+            locale={{ emptyText: <ListaVacia /> }}
         />
     )
 }

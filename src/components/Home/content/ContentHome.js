@@ -10,7 +10,7 @@ export const ContentHome = () => {
 
     const [selectedTags, setSelectedTags] = useState([]);
     const notas = useSelector(state => state.notas);
-
+    
     const styleContent = {
         padding: "2rem 4rem",
         maxWidth: "1400px",

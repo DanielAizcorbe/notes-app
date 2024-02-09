@@ -2,18 +2,20 @@ import { StarFilled } from '@ant-design/icons';
 import { Button, Popover } from 'antd'
 import React from 'react'
 
-const BotonFav = ({toggleFavourite, favourite}) => {
-
-    const content = "Agregar a favoritos";
+const BotonFav = ({ toggleFavourite, favourite }) => {
 
     const styles = {
-        color: favourite ? "#1677ff" : "inherit",
+        color: favourite ? "gold" : "black",
     };
 
     return (
-        <Popover content={content} placement='top'>
+        <Popover
+            content="Agregar a favoritos"
+            placement='top'
+            trigger="hover"
+        >
             <Button
-                shape='circle'
+                type='text'
                 size='large'
                 icon={<StarFilled />}
                 onClick={toggleFavourite}
