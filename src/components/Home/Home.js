@@ -7,7 +7,7 @@ export const Home = () => {
     
     return (
         <Layout
-            style={{ width: "100%", height: "100vh" }}
+            style={{ width: "100%", height: "100%" }}
         >
             <HeaderNotes selectedSection={'1'}/>
             <ContentHome />
