@@ -9,6 +9,7 @@ const HeaderNotes = ({selectedSection}) => {
             style={{
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: "center"
             }}
         >
             <NavBar selectedSection={selectedSection}/>

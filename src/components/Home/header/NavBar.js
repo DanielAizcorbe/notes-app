@@ -37,7 +37,8 @@ export const NavBar = ({ selectedSection }) => {
             items={items}
             style={{
                 flex: 1,
-                minWidth: 0,
+                maxWidth: "1300px",
+                width: "100%",
             }}
         />
     )

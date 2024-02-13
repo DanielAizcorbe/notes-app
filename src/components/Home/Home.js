@@ -4,12 +4,12 @@ import HeaderNotes from './header/HeaderNotes';
 import { ContentHome } from './content/ContentHome';
 
 export const Home = () => {
-    
+
     return (
         <Layout
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%", minHeight: "100vh" }}
         >
-            <HeaderNotes selectedSection={'1'}/>
+            <HeaderNotes selectedSection={'1'} />
             <ContentHome />
         </Layout>
     )
