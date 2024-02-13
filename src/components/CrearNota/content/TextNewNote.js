@@ -1,24 +1,40 @@
 import TextArea from 'antd/es/input/TextArea'
-import React from 'react'
+import React, { useState } from 'react'
 
-export const TextNewNote = ({ changeContent }) => {
+export const TextNewNote = ({ text, changeContent }) => {
 
     const styles = {
         width: '100%',
-        maxHeight: "1000px",
         minHeight: "400px",
         height: "100%",
-        resize: "none",
+    };
+
+    const handlePressEnter = (e) => {
+        const currentLineCount = (text.match(/\n/g) || []).length + 1;
+
+        const maxLineCount = 15;
+
+        if (currentLineCount >= maxLineCount) {
+            e.preventDefault();
+        }
     };
 
     const onChange = (e) => {
         changeContent(e.target.value);
     }
     return (
-        <TextArea
-            style={styles}
-            variant='borderless'
-            onChange={onChange}
-        />
+        <>
+            <TextArea
+                style={styles}
+                variant='borderless'
+                onChange={onChange}
+                autoSize={{
+                    maxRows: 15
+                }}
+                showCount
+                maxLength={300}
+                onPressEnter={handlePressEnter}
+            />
+        </>
     )
 }

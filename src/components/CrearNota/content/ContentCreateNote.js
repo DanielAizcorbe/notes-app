@@ -14,6 +14,9 @@ export const ContentCreateNote = () => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [selectedTags, setSelectedTags] = useState([]);
+    
+    const [openTagSelect, setOpenTagSelect] = useState(false);
+
     const [tagName, setTagName] = useState("");
 
     const tags = useSelector(state => state.tags);
@@ -22,7 +25,7 @@ export const ContentCreateNote = () => {
         padding: "2rem 4rem",
         maxWidth: "1400px",
         width: "100%",
-        height: "100%"
+        minHeight: "100%"
     };
 
     const selectBody = (menu) => {
@@ -32,6 +35,7 @@ export const ContentCreateNote = () => {
                 <CrearTag
                     tagName={tagName}
                     setTagName={setTagName}
+                    closeMenu={() => setOpenTagSelect(false)}
                 />
             </div>
         );
@@ -42,6 +46,7 @@ export const ContentCreateNote = () => {
         <Flex
             align='center'
             justify='center'
+            style={{minHeight: "100%"}}
         >
             <Content
                 style={styleContent}
@@ -69,13 +74,16 @@ export const ContentCreateNote = () => {
                             width={"100%"}
                             body={selectBody}
                             setSearch={setTagName}
+                            open={openTagSelect}
+                            setOpen={setOpenTagSelect}
                         />
                     </Flex>
                     <Divider style={{ margin: "10px" }} />
                     <TextNewNote
                         changeContent={setContent}
+                        text={content}
                     />
-                    <Divider style={{ margin: "10px" }} />
+                    
                 </Flex>
             </Content>
         </Flex>
