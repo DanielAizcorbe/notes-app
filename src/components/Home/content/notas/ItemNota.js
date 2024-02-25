@@ -8,6 +8,8 @@ import BotonFav from './botones/BotonFav';
 import Paragraph from 'antd/es/typography/Paragraph';
 import BotonAbrir from './botones/BotonAbrir';
 import { ListaTags } from './ListaTags';
+import Input from 'antd/es/input/Input';
+import TextArea from 'antd/es/input/TextArea';
 
 const ItemNota = ({ nota, className }) => {
 
@@ -31,6 +33,10 @@ const ItemNota = ({ nota, className }) => {
         alert("abriendo la nota: " + nota.id);
     }
 
+    const lineas = nota.content.split('\n');
+
+    const lineasMostradas = 6;
+
     return (
         <List.Item className={className}>
             <Card
@@ -48,21 +54,19 @@ const ItemNota = ({ nota, className }) => {
                     />
                 ]}
             >
-                <Paragraph
-                    ellipsis={{
-                        rows: 4,
-                        expandable: false,
+                <TextArea
+                    rows={lineasMostradas}
+                    variant='borderless'
+                    readOnly
+                    style={{
+                        resize: "none",
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        margin : "0 0 1rem 0"
                     }}
+                    value={nota.content}
                 >
-                    {nota.content.split('\n').map((line, index) => (
-                        <p
-                            key={index}
-                            style={{margin: 0}}
-                        >
-                            {line}
-                        </p>
-                    ))}
-                </Paragraph>
+                </TextArea>
                 <ListaTags
                     tags={tags.filter(t => nota.tags.includes(t.id))}
                 />
@@ -70,32 +74,5 @@ const ItemNota = ({ nota, className }) => {
         </List.Item>
     )
 }
-
-/**
- * <Flex
-                vertical
-                onClick={openNote}
-                style={{ width: "100%" }}
-            >
-                <Title
-                    level={3}
-                    style={{ margin: 0, padding: "0.5rem 0" }}
-                >
-                    {nota.title}
-                </Title>
-            </Flex>
-            <Flex
-                gap={"1rem"}
-            >
-                <BotonFav
-                    toggleFavourite={handleFavourite}
-                    favourite={nota.favourite}
-                />
-                <BotonBorrar
-                    handleDelete={handleDelete}
-                />
-            </Flex>
- * 
- */
 
 export default ItemNota

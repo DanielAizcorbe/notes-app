@@ -85,12 +85,12 @@ export const ContentCreateNote = () => {
                         text={content}
                     />
                     <Divider style={{ margin: "30px 10px" }} />
-                    <CreateButton 
+                    <CreateButton
                         content={content}
                         nextId={nextId}
                         selectedTags={selectedTags}
                         title={title}
-                    /> 
+                    />
                 </Flex>
             </Content>
         </Flex>
