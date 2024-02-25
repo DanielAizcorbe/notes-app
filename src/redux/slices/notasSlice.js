@@ -83,9 +83,13 @@ const notasSlice = createSlice({
             const tagId = action.payload.tagId;
 
             state[index].tags = state[index].tags.filter(t => t.id !== tagId);
+        },
+        createNote: (state, action) => {
+            state.push(action.payload);
+            console.log("added: ",action.payload);
         }
     }
 });
 
-export const { toggleFavourite, addTag, removeTag, editNote, deleteNote } = notasSlice.actions;
+export const { toggleFavourite, addTag, removeTag, editNote, deleteNote, createNote } = notasSlice.actions;
 export default notasSlice.reducer;
