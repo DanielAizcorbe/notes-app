@@ -51,10 +51,17 @@ const ItemNota = ({ nota, className }) => {
                 <Paragraph
                     ellipsis={{
                         rows: 4,
-                        expandable: false
+                        expandable: false,
                     }}
                 >
-                    {nota.content}
+                    {nota.content.split('\n').map((line, index) => (
+                        <p
+                            key={index}
+                            style={{margin: 0}}
+                        >
+                            {line}
+                        </p>
+                    ))}
                 </Paragraph>
                 <ListaTags
                     tags={tags.filter(t => nota.tags.includes(t.id))}
