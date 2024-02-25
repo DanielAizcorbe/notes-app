@@ -22,6 +22,7 @@ export const tagRender = (tags, label, handleSelectedTags, selectedTags) => {
                 style={{
                     marginRight: 3,
                     marginBottom: 3,
+                    height: "22px"
                 }}
                 key={label}
             >
