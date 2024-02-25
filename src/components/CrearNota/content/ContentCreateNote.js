@@ -6,15 +6,16 @@ import { Divider, Flex } from 'antd';
 import { TextNewNote } from './TextNewNote';
 import TagSelect from '../../Home/content/tags/TagSelect';
 import { CrearTag } from '../../Home/content/tags/CrearTag';
+import { CreateButton } from './CreateButton';
 
 export const ContentCreateNote = () => {
 
-    const nextId = Math.max(useSelector(state => state.notas).map(n => n.id)) + 1;
+    const nextId = Math.max(...useSelector(state => state.notas).map(n => n.id)) + 1;
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [selectedTags, setSelectedTags] = useState([]);
-    
+
     const [openTagSelect, setOpenTagSelect] = useState(false);
 
     const [tagName, setTagName] = useState("");
@@ -46,7 +47,7 @@ export const ContentCreateNote = () => {
         <Flex
             align='center'
             justify='center'
-            style={{minHeight: "100%"}}
+            style={{ minHeight: "100%" }}
         >
             <Content
                 style={styleContent}
@@ -83,7 +84,13 @@ export const ContentCreateNote = () => {
                         changeContent={setContent}
                         text={content}
                     />
-                    
+                    <Divider style={{ margin: "30px 10px" }} />
+                    <CreateButton 
+                        content={content}
+                        nextId={nextId}
+                        selectedTags={selectedTags}
+                        title={title}
+                    /> 
                 </Flex>
             </Content>
         </Flex>
