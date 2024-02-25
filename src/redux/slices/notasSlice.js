@@ -85,8 +85,13 @@ const notasSlice = createSlice({
             state[index].tags = state[index].tags.filter(t => t.id !== tagId);
         },
         createNote: (state, action) => {
-            state.push(action.payload);
-            console.log("added: ",action.payload);
+            let { title, id, tags, favourite, content } = action.payload;
+            
+            if (title === "") {
+                title = "Nueva Nota " + id;
+            }
+            state.push({ title, id, tags, favourite, content });
+            console.log("added: ", { title, id, tags, favourite, content });
         }
     }
 });
