@@ -27,13 +27,6 @@ export const NavBar = ({ selectedSection }) => {
             </Link>,
             icon: <FileAddOutlined />
         },
-        {
-            key: 4,
-            label: <Link to={"/tags"}>
-                Tags
-            </Link>,
-            icon: <TagsOutlined />
-        },
     ];
 
     return (
