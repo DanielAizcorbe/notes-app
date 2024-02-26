@@ -19,15 +19,16 @@ const ModalNotaCreada = ({ open }) => {
             centered
             footer={null}
             closable={false}
-            style={{
-                width: "500px"
-            }}
+            width={"400px"}
         >
             <Flex
                 vertical
                 align='center'
             >
-                <Title level={4}>
+                <Title 
+                    level={4}
+                    style={{margin: 0, padding: "10px"}}
+                >
                     La nota fue creada con exito
                 </Title>
                 <Button
