@@ -37,12 +37,12 @@ const tags = [
 const tagsSlice = createSlice({
     name: "tags",
     initialState: tags,
-    reducer: {
+    reducers: {
         createTag: (state, action) => {
             state.push(action.payload);
         },
         deleteTag: (state, action) => {
-            state = state.filter(t => t.id !== action.payload.id);
+            state.filter(t => t.id !== action.payload.id);
         },
     }
 });

@@ -16,10 +16,6 @@ export const CrearTag = ({ closeMenu }) => {
         setShowModal(false);
     }
 
-    const create = () => {
-        
-    }
-
     return (
         <>
             <Button
@@ -32,8 +28,6 @@ export const CrearTag = ({ closeMenu }) => {
             <ModalCreacionTag 
                 showModal={showModal}
                 closeModal={closeModal}
-                text={""}
-                create={create}
             />
         </>
     )
