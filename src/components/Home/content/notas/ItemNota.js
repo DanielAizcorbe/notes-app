@@ -5,10 +5,8 @@ import { deleteNote, toggleFavourite } from '../../../../redux/slices/notasSlice
 import Card from 'antd/es/card/Card';
 import { BotonBorrar } from './botones/BotonBorrar';
 import BotonFav from './botones/BotonFav';
-import Paragraph from 'antd/es/typography/Paragraph';
 import BotonAbrir from './botones/BotonAbrir';
 import { ListaTags } from './ListaTags';
-import Input from 'antd/es/input/Input';
 import TextArea from 'antd/es/input/TextArea';
 
 const ItemNota = ({ nota, className }) => {

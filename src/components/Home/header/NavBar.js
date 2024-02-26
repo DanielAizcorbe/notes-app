@@ -1,4 +1,4 @@
-import { FileAddOutlined, FileTextOutlined, StarOutlined } from '@ant-design/icons';
+import { FileAddOutlined, FileTextOutlined, StarOutlined, TagsOutlined } from '@ant-design/icons';
 import { Menu } from 'antd'
 import React from 'react'
 import { Link } from 'react-router-dom';
@@ -26,7 +26,14 @@ export const NavBar = ({ selectedSection }) => {
                 Crear Nota
             </Link>,
             icon: <FileAddOutlined />
-        }
+        },
+        {
+            key: 4,
+            label: <Link to={"/tags"}>
+                Tags
+            </Link>,
+            icon: <TagsOutlined />
+        },
     ];
 
     return (

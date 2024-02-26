@@ -26,21 +26,7 @@ export const ContentHome = () => {
             justify='center'
             align='center'
         >
-            <Content
-                style={styleContent}
-            >
-                <Title>
-                    Notas
-                </Title>
-                <Filters
-                    handleSelectedTags={setSelectedTags}
-                    selectedTags={selectedTags}
-                    setSearchText={setTitleSearch}
-                />
-                <ListaNotas
-                    notas={filteredTextNotes}
-                />
-            </Content>
+            
         </Flex>
     )
 }

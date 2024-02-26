@@ -2,7 +2,7 @@ import { Header } from 'antd/es/layout/layout'
 import React from 'react'
 import { NavBar } from './NavBar'
 
-const HeaderNotes = ({selectedSection}) => {
+const HeaderPage = ({selectedSection}) => {
 
     return (
         <Header
@@ -17,4 +17,4 @@ const HeaderNotes = ({selectedSection}) => {
     )
 }
 
-export default HeaderNotes
+export default HeaderPage
