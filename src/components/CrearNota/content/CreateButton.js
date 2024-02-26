@@ -32,13 +32,18 @@ export const CreateButton = ({ nextId, title, content, selectedTags }) => {
             <ModalNotaCreada
                 open={openModal}
             />
-            <Button
-                type='primary'
-                icon=<PlusOutlined />
-                onClick={create}
+            <Flex
+                justify='center'
+                align='center'
             >
-                Crear
-            </Button>
+                <Button
+                    type='primary'
+                    icon=<PlusOutlined />
+                    onClick={create}
+                >
+                    Crear
+                </Button>
+            </Flex>
         </Flex>
     )
 }

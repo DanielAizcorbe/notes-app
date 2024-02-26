@@ -8,7 +8,7 @@ const BotonAbrir = ({openNote}) => {
 
     return (
         <Popover
-            content="Abrir"
+            content="Editar"
             placement='top'
             trigger="hover"
         >

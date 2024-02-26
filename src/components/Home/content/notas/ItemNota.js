@@ -8,10 +8,12 @@ import BotonFav from './botones/BotonFav';
 import BotonAbrir from './botones/BotonAbrir';
 import { ListaTags } from './ListaTags';
 import TextArea from 'antd/es/input/TextArea';
+import { useNavigate } from 'react-router-dom';
 
 const ItemNota = ({ nota, className }) => {
 
     const tags = useSelector(state => state.tags);
+    const navegar = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -24,14 +26,10 @@ const ItemNota = ({ nota, className }) => {
 
     }
 
-    /**
-     * TODO hacer un fetch de datos
-     */
     const openNote = () => {
-        alert("abriendo la nota: " + nota.id);
+        const linkNota = '/notes/' + nota.id;
+        navegar(linkNota);
     }
-
-    const lineas = nota.content.split('\n');
 
     const lineasMostradas = 6;
 
@@ -60,7 +58,7 @@ const ItemNota = ({ nota, className }) => {
                         resize: "none",
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
-                        margin : "0 0 1rem 0"
+                        margin: "0 0 1rem 0"
                     }}
                     value={nota.content}
                 >

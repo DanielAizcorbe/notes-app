@@ -10,7 +10,7 @@ const BotonFav = ({ toggleFavourite, favourite }) => {
 
     return (
         <Popover
-            content="Agregar a favoritos"
+            content="Favoritos"
             placement='top'
             trigger="hover"
         >

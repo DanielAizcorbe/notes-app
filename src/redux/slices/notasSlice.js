@@ -67,10 +67,16 @@ const notasSlice = createSlice({
             return state.filter(n => n.id !== action.payload.id);
         },
         editNote: (state, action) => {
+            const index = state.findIndex(n => n.id == action.payload.id);
+
             const newContent = action.payload.content;
-            const index = action.payload.id;
+            const newTags = action.payload.tags;
+            const newTitle = action.payload.title
 
             state[index].content = newContent;
+            state[index].tags = newTags;
+            state[index].title = newTitle;            
+
         },
         addTag: (state, action) => {
             const index = action.payload.noteId;
@@ -86,7 +92,7 @@ const notasSlice = createSlice({
         },
         createNote: (state, action) => {
             let { title, id, tags, favourite, content } = action.payload;
-            
+
             if (title === "") {
                 title = "Nueva Nota " + id;
             }

@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import store from "../../redux/store";
 import Favourites from "../Favourites/Favourites";
 import CreateNote from "../CrearNota/CreateNote";
+import { EditarNota } from "../EditarNota/EditarNota";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/notes" element={<Home />} />
           <Route exact path="/favourites" element={<Favourites />} />
-          <Route exact path="/notes/:id/edit" element={<Home />} />
+          <Route path="/notes/:id" element={<EditarNota />} />
           <Route exact path="/notes/new" element={<CreateNote />} />
         </Routes>
       </BrowserRouter>

@@ -34,6 +34,8 @@ export const TextNewNote = ({ text, changeContent }) => {
                 showCount
                 maxLength={300}
                 onPressEnter={handlePressEnter}
+                value={text}
+                spellCheck={false}
             />
         </>
     )

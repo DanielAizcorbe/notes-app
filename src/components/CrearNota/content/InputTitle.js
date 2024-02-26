@@ -1,7 +1,7 @@
 import Input from 'antd/es/input/Input'
 import React from 'react'
 
-const InputTitle = ({ changeTitle }) => {
+const InputTitle = ({ changeTitle, title }) => {
 
     const styles = {
         fontSize: "2rem",
@@ -17,6 +17,8 @@ const InputTitle = ({ changeTitle }) => {
             placeholder="Título"
             variant='borderless'
             onChange={onChange}
+            value={title || ""}
+            spellCheck={false}
         />
     )
 }
