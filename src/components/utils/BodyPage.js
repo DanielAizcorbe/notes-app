@@ -1,6 +1,7 @@
 import Layout, { Content } from 'antd/es/layout/layout'
 import React from 'react'
 import HeaderPage from '../Home/header/HeaderPage'
+import { Flex } from 'antd';
 
 export const BodyPage = ({ children, selectedSection }) => {
 
@@ -15,9 +16,16 @@ export const BodyPage = ({ children, selectedSection }) => {
             style={{ width: "100%", minHeight: "100vh" }}
         >
             <HeaderPage selectedSection={selectedSection + ""} />
-            <Content style={styleContent}>
-                {children}
-            </Content>
+            <Flex
+                vertical
+                align='center'
+                justify='flex-start'
+            >
+
+                <Content style={styleContent}>
+                    {children}
+                </Content>
+            </Flex>
         </Layout>
     )
 }
