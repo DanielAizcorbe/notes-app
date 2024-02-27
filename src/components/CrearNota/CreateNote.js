@@ -43,6 +43,7 @@ const CreateNote = () => {
             >
                 <InputTitle
                     changeTitle={setTitle}
+                    title={title}
                 />
                 <Divider style={{ margin: "10px" }} />
                 <Flex

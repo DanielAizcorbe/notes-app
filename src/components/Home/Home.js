@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { BodyPage } from '../utils/BodyPage';
-import { Content } from 'antd/es/layout/layout';
 import Title from 'antd/es/typography/Title';
 import { Filters } from './content/filtros/Filters';
 import ListaNotas from './content/notas/ListaNotas';
