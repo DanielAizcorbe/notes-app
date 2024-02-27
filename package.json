@@ -1,7 +1,7 @@
 {
   "name": "notes-app",
   "version": "0.1.0",
-  "homepage": "https://daniel-aizcorbe.github.io/notes-app",
+  "homepage": "https://DanielAizcorbe.github.io/notes-app",
   "private": true,
   "dependencies": {
     "@ant-design/colors": "^7.0.2",
@@ -45,8 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.1.1"
   }
 }
-
-
