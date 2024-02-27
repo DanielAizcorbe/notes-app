@@ -20,8 +20,8 @@ export const BodyPage = ({ children, selectedSection }) => {
                 vertical
                 align='center'
                 justify='flex-start'
+                style={{width: "100%"}}
             >
-
                 <Content style={styleContent}>
                     {children}
                 </Content>
