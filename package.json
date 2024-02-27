@@ -1,7 +1,7 @@
 {
   "name": "notes-app",
   "version": "0.1.0",
-  "homepage": "https://DanielAizcorbe.github.io/notes-app",
+  "homepage": "http://danielaizcorbe.github.io/notes-app",
   "private": true,
   "dependencies": {
     "@ant-design/colors": "^7.0.2",

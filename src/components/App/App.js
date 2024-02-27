@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "../Home/Home";
 import "./app.css";
 import { Provider } from "react-redux";
@@ -10,7 +10,7 @@ import { EditarNota } from "../EditarNota/EditarNota";
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter >
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/notes" element={<Home />} />
@@ -18,7 +18,7 @@ function App() {
           <Route path="/notes/:id" element={<EditarNota />} />
           <Route exact path="/notes/new" element={<CreateNote />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 }
